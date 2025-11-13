@@ -1,0 +1,509 @@
+
+/* --- 1. RESET Y BASE --- */
+* {
+    box-sizing: border-box; /* Asegura que el padding y border no aumenten el tamaño total */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+ 
+  font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    background-color: #f7f2f2; /* Fondo muy claro */
+    color: #333;
+}
+
+.container {
+    width: 90%; /* Más ancho en pantallas grandes */
+    max-width: 1200px; /* Límite para que no se extienda demasiado */
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* --- 2. ENCABEZADO Y NAVEGACIÓN --- */
+header {
+    background-color:#cf7e46; /* Rosa vibrante */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* --- 2. ENCABEZADO SUPERIOR (HEADER) --- */
+.top-header {
+    background-color: #fff6f5; /* Mismo fondo de la página */
+    padding: 20px 0;
+    border-bottom: 1px solid #eee; /* Separador sutil */
+}
+
+.header-content {
+    /* Usamos flexbox para que el contenido del header se alinee */
+    display: flex;
+    justify-content: center; /* Centra el contenido si no hay nada a la derecha */
+    align-items: center;
+}
+
+.brand-identity {
+    /* Contenedor del logo + título */
+    display: flex;
+    align-items: center; /* Alinea el logo y el texto verticalmente */
+}
+
+.header-logo {
+    width: 80px; /* Tamaño del logo */
+    height: auto;
+    margin-right: 15px; /* Espacio entre el logo y el texto "Day Dreams" */
+}
+
+.top-header h1 {
+    font-size: 2.5em;
+    color: #cf7e46;
+    margin: 0;
+    padding: 0;
+    /* Usa la fuente que elegiste para que se vea consistente */
+    
+}
+
+
+/* --- SECCIÓN DE NAVEGACIÓN INFERIOR (NAV) --- */
+.nav-bar {
+    background-color: #444; /* Gris oscuro para la barra de enlaces */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar .container {
+    padding: 0;
+    text-align: center; /* Centra los enlaces */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinea los enlaces horizontalmente */
+    justify-content: center; /* Centra los elementos de la lista */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #cf7e46; /* Rosa claro al pasar el mouse */
+    color: white;
+}
+
+/* --- Media Queries para Móviles --- */
+@media (max-width: 768px) {
+    .top-header h1 {
+        font-size: 2em; /* Título más pequeño en móvil */
+    }
+    .header-logo {
+        width: 60px; /* Logo más pequeño en móvil */
+    }
+    .nav-links {
+        flex-direction: column; /* Apila los enlaces en móvil */
+    }
+    .nav-links a {
+        padding: 10px 20px;
+    }
+}
+
+/* Navegación */
+nav {
+    background-color: #444; /* Gris oscuro */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #cf7e46; /* Rosa claro al pasar el mouse */
+    color: white;
+}
+
+/* --- 3. SECCIONES GENERALES --- */
+.section {
+    background: white;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+.section h2 {
+    color: #cf7e46;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #d28d5f; /* Línea de decoración */
+    padding-bottom: 10px;
+}
+
+/* --- 4. SECCIÓN SERVICIOS --- */
+#servicios {
+    background-color: white; /* Aseguramos un fondo blanco limpio */
+    padding: 40px 20px;
+}
+
+#servicios h2 {
+    text-align: center;
+}
+
+#servicios ul {
+    list-style: none;
+    padding-left: 0;
+    
+    /* Usamos Flexbox para crear una fila de tarjetas */
+    display: flex; 
+    flex-wrap: wrap; /* Permite que las tarjetas salten a la siguiente línea en móviles */
+    gap: 25px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas si no llenan la línea */
+    margin-top: 30px;
+}
+
+#servicios li {
+    /* Define el tamaño de cada tarjeta */
+    width: 300px; /* Ancho fijo para las tarjetas */
+    height: auto;
+    
+    background: #fffafa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #d28d5f; /* Borde suave */
+    
+    /* Centra el texto dentro de la tarjeta */
+    text-align: center;
+    
+    transition: all 0.3s ease;
+    margin-bottom: 0; /* Aseguramos que no haya margen de lista */
+    
+    display: flex; /* Usamos flex para alinear el ícono y el texto */
+    flex-direction: column;
+    align-items: center;
+
+     
+}
+
+#servicios li:hover {
+    transform: translateY(-5px) scale(1.02); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: #dfa27a; /* Fondo más rosado al pasar el mouse */
+    border-color: #cf7e46;
+}
+
+#servicios li strong {
+    font-size: 1.2em; /* Título del servicio más grande */
+    color: #cf7e46;
+    margin-bottom: 8px;
+    display: block;
+
+}
+
+/* Estilo para el ícono/emoji (si lo añades) */
+.service-icon {
+    font-size: 2.5em; /* Tamaño grande para el ícono */
+    margin-bottom: 10px;
+    color: #cf7e46; /* Color del ícono */
+
+
+}
+
+/* Media Query para móvil */
+@media (max-width: 650px) {
+    #servicios ul {
+        gap: 15px;
+    }
+    #servicios li {
+        width: 90%; /* Ocupa casi todo el ancho en móviles */
+        margin: 0 auto;
+    }
+}
+
+/* --- 5. SECCIÓN GALERÍA --- */
+#galeria {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.gallery-item {
+    float: left;
+    width: 31%; /* Sigue usando el 31% para tres columnas */
+    margin: 1.15%; /* Ajusta el margen para un espaciado más uniforme */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra un poco más pronunciada */
+    background-color: white; /* Asegura un fondo blanco para el item */
+    /* Añadimos una altura mínima para que los contenedores tengan un tamaño base *
+    min-height: 380px; /* (300px de imagen + ~80px de texto/padding) */
+   
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.gallery-item img {
+
+    width: 100%;
+    /* Establece una altura fija que todas deben cumplir */
+    height: 300px; 
+    
+    /* CRUCIAL: Recorta la imagen para que cubra la altura de 300px */
+    object-fit: cover; 
+    
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03); /* Zoom sutil al pasar el mouse */
+}
+
+
+.gallery-item p {
+    background-color: #fce4ec; /* Un rosa muy claro para el fondo del texto */
+    padding: 12px 0; /* Más padding para el texto */
+    margin: 0;
+    font-weight: bold;
+    color: #cf7e46;
+    font-size: 1.05em; /* Un poco más grande el texto */
+    border-top: 1px solid #d28d5f; /* Línea suave arriba del texto */
+}
+
+/* Para limpiar los floats después de la galería */
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+S
+/* --- 6. SECCIÓN CONTACTO Y FORMULARIO --- */
+#contacto {
+    background-color: #e9e9f2; /* Un gris muy suave para destacar la sección */
+    padding: 50px 20px;
+    text-align: center; /* Centramos los títulos */
+}
+
+#contacto h2 {
+    color: #cf7e46;
+    margin-bottom: 25px;
+    border-bottom: none; /* Quitamos la línea para un look más limpio */
+}
+
+/* Estilos para el contenedor del formulario */
+#contacto form {
+    max-width: 600px; /* Limita el ancho del formulario para mejor lectura */
+    margin: 0 auto; /* Centra el formulario en la página */
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Alineamos las etiquetas a la izquierda dentro del formulario */
+}
+
+#contacto label {
+    display: block; /* Hace que cada etiqueta ocupe su propia línea */
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto select,
+#contacto textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+#contacto input:focus, 
+#contacto textarea:focus {
+    border-color: #cf7e46; /* Resalta el campo cuando el usuario hace clic */
+    outline: none;
+}
+
+#contacto textarea {
+    resize: vertical; /* Permite al usuario ajustar la altura del área de texto */
+    min-height: 120px;
+}
+
+#contacto input[type="submit"] {
+    display: block; /* Para que el botón ocupe todo el ancho */
+    width: 100%;
+    background-color: #cf7e46;
+    color: white;
+    padding: 15px 25px;
+    margin-top: 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#contacto input[type="submit"]:hover {
+    background-color: #cf7e46;
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 25px;
+    
+    /* 👇 AJUSTE CLAVE AQUÍ: Aumentamos el padding inferior 👇 */
+    padding: 15px 15px 25px 15px; /* (Arriba, Derecha, Abajo, Izquierda) */
+    
+    border-top: 1px solid #eee; 
+}
+
+
+/* --- 7. PIE DE PÁGINA --- */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* --- 8. ADAPTABILIDAD (MEDIA QUERIES) --- */
+
+@media (max-width: 768px) {
+    
+    /* 1. AJUSTES GENERALES Y CONTENEDORES */
+    .container {
+        width: 95%; 
+        padding: 0 10px; /* Asegura padding horizontal en los bordes de la pantalla */
+    }
+    .section {
+        padding: 40px 10px; /* Asegura padding horizontal en las secciones */
+    }
+
+    /* 2. HEADER SUPERIOR Y LOGO */
+    .top-header {
+        padding: 15px 0;
+    }
+    .header-content {
+        justify-content: center; /* Centra el logo y el título */
+    }
+    .header-logo {
+        width: 60px; /* Logo más pequeño en móvil */
+        margin-right: 10px;
+    }
+    .top-header h1 {
+        font-size: 1.8em; /* Título más pequeño */
+    }
+    
+    /* 3. BARRA DE NAVEGACIÓN INFERIOR (NAV-BAR) */
+    .nav-bar {
+        box-shadow: none; /* Quitamos sombras para un look más limpio */
+    }
+    .nav-links {
+        flex-direction: column; /* Apila los enlaces */
+        align-items: flex-start; /* CRUCIAL: Alineamos los enlaces a la izquierda para mejor lectura */
+        width: 100%;
+    }
+    .nav-links li {
+        width: 100%; /* El enlace ocupa todo el ancho */
+        text-align: left;
+        margin: 0;
+        border-bottom: 1px solid #555; /* Separador sutil */
+    }
+
+.nav-links a {
+        /* ¡AJUSTE CLAVE AQUÍ! Reducimos el padding vertical */
+        padding: 12px 15px; /* De 15px a 12px (vertical) */
+        color: white; 
+        width: 100%; 
+        display: block;
+        text-align: left;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none; /* Quitamos el borde del último elemento */
+    }
+
+    /* 4. SECCIÓN HEROICA (INICIO) */
+    .hero {
+        height: 350px; 
+    }
+    .hero h2 {
+        font-size: 1.8em; 
+    }
+    .hero p {
+        font-size: 0.95em;
+    }
+    .btn-cta {
+        font-size: 1.05em;
+        padding: 10px 20px;
+    }
+    
+    /* 5. GALERÍA DE TRABAJOS */
+    .gallery-item {
+        width: 95%; /* Ocupa casi todo el ancho */
+        float: none; 
+        margin: 15px auto; /* Centra y separa verticalmente */
+    }
+    
+    /* 6. SERVICIOS Y TESTIMONIOS (Se apilan) */
+    #servicios ul,
+    .testimonio-wrapper {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    #servicios li,
+    .testimonio-item {
+        width: 95%; /* Ocupa la mayor parte del ancho */
+        margin: 0 auto 20px auto; /* Centramos las tarjetas */
+        padding: 20px; /* Más padding interno para que el texto respire */
+    }
+    
+    /* 7. FORMULARIO DE CONTACTO */
+    #contacto form {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    #contacto input[type="submit"] {
+        width: 100%; 
+    }
+}
